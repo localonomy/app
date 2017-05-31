@@ -1,0 +1,510 @@
+[
+  {
+    "id": "1",
+    "name": "Newbie",
+    "picture": "newbie.png",
+    "description": "New around here? Congrats on your first tasted dish! Go for more local delicacies!",
+    "conditions": [
+      {
+        "type": "total",
+        "count": "1"
+      }
+    ]
+  },{
+    "id": "2",
+    "name": "Foodie",
+    "picture": "foodie.png",
+    "description": "Hey! That was your 25th food! Good job discovering local delicaces!",
+    "conditions": [
+      {
+        "type": "total",
+        "count": "25"
+      }
+    ]
+  },{
+    "id": "3",
+    "name": "Gluton",
+    "picture": "gluton.png",
+    "description": "People say traveling is the best diet! Keep going!",
+    "conditions": [
+      {
+        "type": "total",
+        "count": "100"
+      }
+    ]
+  },{
+    "id": "4",
+    "name": "Food Adept",
+    "picture": "food-adpet.png",
+    "description": "You are not only collecting places and friends ... but foods as well!",
+    "conditions": [
+      {
+        "type": "total",
+        "count": "200"
+      }
+    ]
+  },{
+    "id": "5",
+    "name": "Food Master",
+    "picture": "food-master.png",
+    "description": "That's it! You are a truly food master! 301 international dishes now lay in your stomach!",
+    "conditions": [
+      {
+        "type": "total",
+        "count": "301"
+      }
+    ]
+  },{
+    "id": "6",
+    "name": "Vive la France !",
+    "picture": "france1.png",
+    "description": "You seem to enjoy french cuisine! This is your 10th french dish tasted!",
+    "conditions": [
+      {
+        "type": "fr",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "7",
+    "name": "French Expert",
+    "picture": "france2.png",
+    "description": "You can call yourself a true french expert! Congratulations in tasting all the french dishes!",
+    "conditions": [
+      {
+        "type": "fr",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "8",
+    "name": "Beer, fries and waffles!",
+    "picture": "belgium1.png",
+    "description": "Because now you know that there is more than beer, fries and waffles in Belgian cuisine!",
+    "conditions": [
+      {
+        "type": "be",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "9",
+    "name": "Belgian Expert",
+    "picture": "belgium2.png",
+    "description": "Good you didn't die from chocolate overdose! You went through the most iconic Belgian dishes!",
+    "conditions": [
+      {
+        "type": "be",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "10",
+    "name": "Italy Connoisseur",
+    "picture": "italy1.png",
+    "description": "Pizza and pasta have no more secrets to you!",
+    "conditions": [
+      {
+        "type": "it",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "11",
+    "name": "Italian Expert",
+    "picture": "italy2.png",
+    "description": "People say Italians only eat pasta and pizza. Now you know better!",
+    "conditions": [
+      {
+        "type": "it",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "12",
+    "name": "¡Olé!",
+    "picture": "spain1.png",
+    "description": "Chorizo and Jamón are not the only things Spain has to offer to the world!",
+    "conditions": [
+      {
+        "type": "es",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "13",
+    "name": "Spanish Expert",
+    "picture": "spain2.png",
+    "description": "You are now a true spaniard gastronomy connoisseur!",
+    "conditions": [
+      {
+        "type": "es",
+        "count": "21"
+      }
+    ]
+  },{
+    "id": "14",
+    "name": "Born in the USA!",
+    "picture": "usa1.png",
+    "description": "Congratulations on exploring further than the typical hamburger and hotdog!",
+    "conditions": [
+      {
+        "type": "us",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "15",
+    "name": "American Expert",
+    "picture": "usa2.png",
+    "description": "Because American food is not just fast food, and it's actually pretty good!",
+    "conditions": [
+      {
+        "type": "us",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "16",
+    "name": "Tacos & Tequila",
+    "picture": "mexico1.png",
+    "description": "Also, never ever mix mezcal with beer ...",
+    "conditions": [
+      {
+        "type": "mx",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "17",
+    "name": "Mexican Expert",
+    "picture": "mexico2.png",
+    "description": "¡Andalé hermanito! Congrats on diving in one of the most unique cuisine and surviving!",
+    "conditions": [
+      {
+        "type": "mx",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "18",
+    "name": "¿Cachai?",
+    "picture": "chile1.png",
+    "description": "Porotos, palta, durazno, maní and ají are now part of your vocabulary!",
+    "conditions": [
+      {
+        "type": "cl",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "19",
+    "name": "Chilean Expert",
+    "picture": "chile2.png",
+    "description": "If you have been this far, you have probably survived to a terremoto!",
+    "conditions": [
+      {
+        "type": "cl",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "20",
+    "name": "Dominicano Soy",
+    "picture": "rep-dom1.png",
+    "description": "De mis raices, yo no voy a olvidarme. Soy de una raza tan humilde y tan grande.",
+    "conditions": [
+      {
+        "type": "do",
+        "count": "10"
+
+      }
+    ]
+  },{
+    "id": "21",
+    "name": "Dominican Expert",
+    "picture": "rep-dom2.png",
+    "description": "Arroz, habichuela y carne. Y sino espaghetti concon.",
+    "conditions": [
+      {
+        "type": "do",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "22",
+    "name": "我爱中国菜",
+    "picture": "china1.png",
+    "description": "Your stomach may have had a hard time, but it was totally worth it!",
+    "conditions": [
+      {
+        "type": "cn",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "23",
+    "name": "Chinese Expert",
+    "picture": "china2.png",
+    "description": "Now that you have the knowledge, help the newbies discover how much China has to offer!",
+    "conditions": [
+      {
+        "type": "cn",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "24",
+    "name": "Singapore Lah!",
+    "picture": "singapore1.png",
+    "description": "Chicken rice ah? Ok can can lah!",
+    "conditions": [
+      {
+        "type": "sg",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "25",
+    "name": "Singaporean Expert",
+    "picture": "singapore2.png",
+    "description": "This extraodinary cuisine has no more secrets to your taste buds!",
+    "conditions": [
+      {
+        "type": "sg",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "26",
+    "name": "私は日本食が大好き",
+    "picture": "japan1.png",
+    "description": "You are now fluent in sushi, sashimi and karate!",
+    "conditions": [
+      {
+        "type": "jp",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "27",
+    "name": "Japanese Expert",
+    "picture": "japan2.png",
+    "description": "Because Japan has so much more to offer than just sushi!",
+    "conditions": [
+      {
+        "type": "jp",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "28",
+    "name": "나는 한국 음식을 사랑",
+    "picture": "korea1.png",
+    "description": "You may just have discovered unbelievable new tastes, and that's great!",
+    "conditions": [
+      {
+        "type": "kr",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "29",
+    "name": "Korean Expert",
+    "picture": "korea2.png",
+    "description": "You lost the count of the patbingsu you have been eating!",
+    "conditions": [
+      {
+        "type": "kr",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "30",
+    "name": "我愛台灣美食",
+    "picture": "taiwan1.png",
+    "description": "Because Taiwan is a bit different from mainland China!",
+    "conditions": [
+      {
+        "type": "tw",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "31",
+    "name": "Taiwanese Expert",
+    "picture": "taiwan2.png",
+    "description": "Good job on tasting 20 taiwanese dishes! Now go for the hundreds left!",
+    "conditions": [
+      {
+        "type": "tw",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "32",
+    "name": "I <3 Goulash",
+    "picture": "hungary1.png",
+    "description": "You may have been surviving on goulash and palinka for the moment, but don't hesitate to explore more!",
+    "conditions": [
+      {
+        "type": "hu",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "33",
+    "name": "Hungarian Expert",
+    "picture": "hungary2.png",
+    "description": "Dude, I don't even know what to say!",
+    "conditions": [
+      {
+        "type": "hu",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "34",
+    "name": "ฉันรักอาหารไทย",
+    "picture": "thailand1.png",
+    "description": "Rainbow curries have no secrets for you anymore!",
+    "conditions": [
+      {
+        "type": "th",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "35",
+    "name": "Thai Expert",
+    "picture": "thailand2.png",
+    "description": "You know a lot of Thai cuisine! What about exploring neighbouring countries?",
+    "conditions": [
+      {
+        "type": "th",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "36",
+    "name": "Food Explorer!",
+    "picture": "food-explorer.png",
+    "description": "Like travelling and discovering new local delicacies? Well you seem to be on the good path to master it all!",
+    "conditions": [
+      {
+        "type": "countries",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "37",
+    "name": "Meat Lover",
+    "picture": "meat-lover.png",
+    "description": "I guess you don't like to eat the food your food eats, right?",
+    "conditions": [
+      {
+        "type": "meat",
+        "count": "80"
+      }
+    ]
+  },{
+    "id": "38",
+    "name": "Fish Lover",
+    "picture": "fish-lover.png",
+    "description": "So much Omega-3 your brain is going to explode!",
+    "conditions": [
+      {
+        "type": "fish",
+        "count": "40"
+      }
+    ]
+  },{
+    "id": "39",
+    "name": "Veggie",
+    "picture": "veggie.png",
+    "description": "Veggie can be tasty!",
+    "conditions": [
+      {
+        "type": "veggie",
+        "count": "40"
+      }
+    ]
+  },{
+    "id": "40",
+    "name": "Vegan",
+    "picture": "vegan.png",
+    "description": "All the animals (and probably your body) thank you!",
+    "conditions": [
+      {
+        "type": "vegan",
+        "count": "40"
+      }
+    ]
+  },{
+    "id": "41",
+    "name": "Cheers!",
+    "picture": "cheers.png",
+    "description": "It's good to drink, but always with moderation! Cheers!",
+    "conditions": [
+      {
+        "type": "alcohol",
+        "count": "10"
+      }
+    ]
+  },{
+    "id": "42",
+    "name": "Sweet Teeth",
+    "picture": "sweet.png",
+    "description": "You like sweets! That's sweet!",
+    "conditions": [
+      {
+        "type": "sugar",
+        "count": "20"
+      }
+    ]
+  },{
+    "id": "43",
+    "name": "Hot'n'Spicy",
+    "picture": "hot-spicy.png",
+    "description": "Do you even feel your tongue anyway?",
+    "conditions": [
+      {
+        "type": "spicy",
+        "count": "25"
+      }
+    ]
+  },{
+    "id": "44",
+    "name": "Egg Power",
+    "picture": "egg-power.png",
+    "description": "Full of protein, full of energy (at least enough to engender a chicken)!",
+    "conditions": [
+      {
+        "type": "egg",
+        "count": "50"
+      }
+    ]
+  },{
+    "id": "45",
+    "name": "Snails?",
+    "picture": "snails.png",
+    "description": "Did you just eat snails? Dude, that's brave!",
+    "conditions": [
+      {
+        "type": "snail",
+        "count": "1"
+      }
+    ]
+  },{
+    "id": "46",
+    "name": "Bzzzzz...",
+    "picture": "insects.png",
+    "description": "Did you just eat insects? Seriously? Dude, that's brave!",
+    "conditions": [
+      {
+        "type": "insect",
+        "count": "1"
+      }
+    ]
+  }
+]
