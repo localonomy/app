@@ -19,19 +19,31 @@ const store = {
  
     // Miss, try retrieving the value from API
     else {
-      // Try retrieving the value from API
-      value = await api.get(key)
+      try {
+        // Try retrieving the value from API
+        value = await api.get(key)
 
-      // Save the value in local storage
-      ReactNativeStore.save(key, value)
-      ReactNativeStore.save(
-        `${key}-cache`,
-        new Date(new Date().getTime() + (27 * 86400000)).toString() // 27 days
-      )
+        // Save the value in local storage
+        ReactNativeStore.save(key, value)
+        ReactNativeStore.save(
+          `${key}-cache`,
+          new Date(new Date().getTime() + (7 * 86400000)).toString() // 7 days
+        )
+      } catch {
+        // If the request to the API fails, just retrieve from cache
+        // even though it might not still be valid
+        value = await ReactNativeStore.get(key)
+      }
     }
 
-    // Return the value
-    return new Promise((resolve, reject) => { resolve(value) })
+    // Return the value or an error if the value is null
+    return new Promise((resolve, reject) => {
+      if (value != null) {
+        resolve(value)
+      } else {
+        reject()
+      }
+    })
   }
 }
 
