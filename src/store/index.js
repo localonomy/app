@@ -29,7 +29,7 @@ const store = {
           `${key}-cache`,
           new Date(new Date().getTime() + (7 * 86400000)).toString() // 7 days
         )
-      } catch {
+      } catch (err) {
         // If the request to the API fails, just retrieve from cache
         // even though it might not still be valid
         value = await ReactNativeStore.get(key)
