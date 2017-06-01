@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import {
   Alert,
   Picker,
+  Text,
   TextInput,
   View,
 } from 'react-native'
@@ -12,7 +13,6 @@ import Tabs from 'react-native-tabs'
 
 import store from './../../store'
 
-import Text from './../../components/Text'
 import Title from './../../components/Title'
 
 import styles from './styles'
@@ -55,6 +55,7 @@ export default class Home extends Component {
     this.state = {
       countries: [],
       filters: [],
+      filtersDisabled: [],
       tab: 'country',
     }
   }
@@ -62,11 +63,13 @@ export default class Home extends Component {
   async componentDidMount() {
     let countries = await store.get('countries')
     let filters = await store.get('filters')
+    let filtersDisabled = await store.get('filters-disabled')
 
     this.setState((prev) => ({
       ...prev,
       countries,
       filters,
+      filtersDisabled,
     }))
   }
 
@@ -102,8 +105,29 @@ export default class Home extends Component {
 
         {this.state.filters.map((filter) => {
           return (
-            <Text key={filter}>
+            <Text
+              key={filter}
+              onPress={async () => {
+                let { filtersDisabled } = this.state
+
+                if (filtersDisabled.includes(filter)) {
+                  filtersDisabled.splice(
+                    filtersDisabled.findIndex((f) => f === filter), 1
+                  )
+                } else {
+                  filtersDisabled.push(filter)
+                }
+
+                await store.set('filters-disabled', filtersDisabled)
+
+                this.setState((prev) => ({
+                  ...prev,
+                  filtersDisabled,
+                }))
+              }}
+              >
               {filter}
+              {(this.state.filtersDisabled.includes(filter)) ? ' - disabled' : ''}
             </Text>
           )
         })}

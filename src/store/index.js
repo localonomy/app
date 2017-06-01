@@ -5,6 +5,21 @@ import ReactNativeStore from 'react-native-simple-store'
 import api from './api'
 
 const store = {
+  async init() {
+    let keys = ['filters-disabled', 'badges-earned', 'dishes-tasted']
+
+    keys.forEach(async (key) => {
+      let value = await ReactNativeStore.get(key)
+      if (value == null) {
+        await ReactNativeStore.save(key, [])
+        await ReactNativeStore.save(
+          `${key}-cache`,
+          new Date(new Date().getTime() + (36500 * 86400000)).toString() //100 years
+        )
+      }
+    })
+  },
+
   async get(key) {
     let value
 
@@ -14,7 +29,7 @@ const store = {
     // Hit, retrieve from local storage
     if (isCacheValid) {
       // Try retrieving the value from local storage
-      value = await ReactNativeStore.get(key)  
+      value = await ReactNativeStore.get(key)
     }
  
     // Miss, try retrieving the value from API
@@ -24,8 +39,8 @@ const store = {
         value = await api.get(key)
 
         // Save the value in local storage
-        ReactNativeStore.save(key, value)
-        ReactNativeStore.save(
+        await ReactNativeStore.save(key, value)
+        await ReactNativeStore.save(
           `${key}-cache`,
           new Date(new Date().getTime() + (7 * 86400000)).toString() // 7 days
         )
@@ -44,6 +59,16 @@ const store = {
         reject()
       }
     })
+  },
+
+  async set(key, value) {
+    await ReactNativeStore.save(key, value)
+    await ReactNativeStore.save(
+      `${key}-cache`,
+      new Date(new Date().getTime() + (36500 * 86400000)).toString() //100 years
+    )
+
+    return new Promise((resolve) => { resolve(value) })
   }
 }
 

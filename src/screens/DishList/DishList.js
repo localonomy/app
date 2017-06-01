@@ -29,13 +29,13 @@ export default class DishList extends Component {
     let { country } = this.props.navigation.state.params
 
     let dishes = await store.get(`dishes--${country.code}`)
+    let filters = await store.get('filters-disabled')
 
-    /* -- TODO --
-     * Filter the dishes depending on the filters selected.
-     * We are doing this here so that the user can change filters even if
-     * offline!
-     * 
-     */ 
+    // Filter the dishes depending on the filters disabled.
+    // We are doing this here so that the user can change filters even if
+    // offline!
+    dishes = dishes.filter((dish) =>
+      dish.contains.every((f) => !filters.includes(f)))
 
     this.setState((prev) => ({
       ...prev,
