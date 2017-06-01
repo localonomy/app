@@ -8,7 +8,7 @@ import filters from './data/filters.json'
 const get = async (key) => {
   let id, response
 
-  [key, id] = key.split('-')
+  [key, id] = key.split('--')
   switch (key) {
     case 'filters':
       return new Promise((resolve, reject) => { resolve(filters) })

@@ -28,7 +28,7 @@ export default class DishList extends Component {
   async componentDidMount() {
     let { country } = this.props.navigation.state.params
 
-    let dishes = await store.get(`dishes-${country.code}`)
+    let dishes = await store.get(`dishes--${country.code}`)
 
     /* -- TODO --
      * Filter the dishes depending on the filters selected.
