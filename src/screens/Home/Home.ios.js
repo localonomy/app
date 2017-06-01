@@ -17,13 +17,10 @@ import Title from './../../components/Title'
 
 import styles from './styles'
 
-const CountryPicker = ({ countries }) => (
+const CountryPicker = ({ countries, onValueChange }) => (
   <Picker
     style={{width: 500}}
-    onValueChange={(country) => Alert.alert(
-      'Selected Country',
-      country
-    )}>
+    onValueChange={onValueChange}>
     <Picker.Item label='Please select a country' value='' />
     {countries.map((country) => {
       return (
@@ -46,8 +43,14 @@ const DishTextInput= () => (
 )
 
 export default class Home extends Component {
+  static navigationOptions = {
+    title: 'Localonomy',
+  }
+
   constructor(props) {
     super(props)
+
+    this.onCountrySelect = this.onCountrySelect.bind(this)
 
     this.state = {
       countries: [],
@@ -67,6 +70,15 @@ export default class Home extends Component {
     }))
   }
 
+  onCountrySelect(code) {
+    const { navigate } = this.props.navigation
+    const { countries } = this.state
+
+    navigate('DishList', {
+      country: countries.find((country) => country.code === code)
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -81,7 +93,10 @@ export default class Home extends Component {
           <Text name='dish'>By Dish Name</Text>
         </Tabs>
         {(this.state.tab === 'country') ?
-          <CountryPicker countries={this.state.countries} /> : 
+          <CountryPicker
+            countries={this.state.countries}
+            onValueChange={this.onCountrySelect}
+          /> : 
           <DishTextInput />
         }
 

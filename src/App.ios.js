@@ -1,13 +1,12 @@
 // @flow
 
-import React, { Component } from 'react'
+import React from 'react'
+import { StackNavigator } from 'react-navigation'
 
 import Home from './screens/Home'
+import DishList from './screens/DishList'
 
-export default class App extends Component {
-  render() {
-    return (
-      <Home/>
-    )
-  }
-}
+export default StackNavigator({
+  Home: { screen: Home },
+  DishList: { screen: DishList },
+})
