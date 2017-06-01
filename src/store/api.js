@@ -28,6 +28,11 @@ const get = async (key) => {
       return response.json()
       break
 
+    case 'dish':
+      response = await fetch(`${config.url}/api/dish/${id}`)
+      return response.json()
+      break
+
     default:
       break
   }

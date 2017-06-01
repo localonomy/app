@@ -61,7 +61,21 @@ export default class DishList extends Component {
         <View>
           <FlatList
             data={this.state.dishes}
-            renderItem={({item}) => <Text key={item.id}>{item.name}</Text>}
+            renderItem={({item}) => (
+              <Text
+                key={item.id}
+                onPress={() => {
+                  const { navigate } = this.props.navigation
+
+                  navigate('DishDetails', {
+                    country: country,
+                    dish: item,
+                  })
+                }}
+                >
+                {item.name}
+              </Text>
+            )}
           />
         </View>
       </View>
