@@ -12,26 +12,21 @@ const get = async (key) => {
   switch (key) {
     case 'filters':
       return new Promise((resolve, reject) => { resolve(filters) })
-      break
 
     case 'badges':
       return new Promise((resolve, reject) => { resolve(badges) })
-      break
   
     case 'countries':
       response = await fetch(`${config.url}/api/countries`)
       return response.json()
-      break
 
     case 'dishes':
       response = await fetch(`${config.url}/api/dishes/${id}`)
       return response.json()
-      break
 
     case 'dish':
       response = await fetch(`${config.url}/api/dish/${id}`)
       return response.json()
-      break
 
     default:
       break
