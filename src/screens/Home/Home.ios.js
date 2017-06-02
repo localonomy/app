@@ -8,6 +8,7 @@ import {
 
 import store from './../../store'
 
+import Filters from './../../components/Filters'
 import TabsPicker from './../../components/TabsPicker'
 import Title from './../../components/Title'
 
@@ -22,12 +23,12 @@ export default class Home extends Component {
     super(props)
 
     this.onCountrySelect = this.onCountrySelect.bind(this)
+    this.onFilterPress = this.onFilterPress.bind(this)
 
     this.state = {
       countries: [],
       filters: [],
       filtersDisabled: [],
-      tab: 'country',
     }
   }
 
@@ -53,6 +54,27 @@ export default class Home extends Component {
     })
   }
 
+  onFilterPress(filter) {
+    return async () => {
+      let { filtersDisabled } = this.state
+
+      if (filtersDisabled.includes(filter)) {
+        filtersDisabled.splice(
+          filtersDisabled.findIndex((f) => f === filter), 1
+        )
+      } else {
+        filtersDisabled.push(filter)
+      }
+
+      await store.set('filters-disabled', filtersDisabled)
+
+      this.setState((prev) => ({
+        ...prev,
+        filtersDisabled,
+      }))
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -60,37 +82,12 @@ export default class Home extends Component {
 
         <TabsPicker
           countries={this.state.countries} 
-          onCountrySelect={this.onCountrySelect}
-        />
+          onCountrySelect={this.onCountrySelect} />
 
-        {this.state.filters.map((filter) => {
-          return (
-            <Text
-              key={filter}
-              onPress={async () => {
-                let { filtersDisabled } = this.state
-
-                if (filtersDisabled.includes(filter)) {
-                  filtersDisabled.splice(
-                    filtersDisabled.findIndex((f) => f === filter), 1
-                  )
-                } else {
-                  filtersDisabled.push(filter)
-                }
-
-                await store.set('filters-disabled', filtersDisabled)
-
-                this.setState((prev) => ({
-                  ...prev,
-                  filtersDisabled,
-                }))
-              }}
-              >
-              {filter}
-              {(this.state.filtersDisabled.includes(filter)) ? ' - disabled' : ''}
-            </Text>
-          )
-        })}
+        <Filters
+          filters={this.state.filters}
+          filtersDisabled={this.state.filtersDisabled}
+          onFilterPress={this.onFilterPress} />
       </View>
     )
   }
