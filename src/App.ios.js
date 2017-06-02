@@ -6,13 +6,13 @@ import { StackNavigator } from 'react-navigation'
 import store from './store'
 
 import Home from './screens/Home'
-import DishList from './screens/DishList'
+import CountryDishes from './screens/CountryDishes'
 import DishDetails from './screens/DishDetails'
 
 store.init()
 
 export default StackNavigator({
   Home: { screen: Home },
-  DishList: { screen: DishList },
+  CountryDishes: { screen: CountryDishes },
   DishDetails: { screen: DishDetails },
 })

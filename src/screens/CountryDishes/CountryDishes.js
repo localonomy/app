@@ -12,7 +12,7 @@ import store from './../../store'
 
 import styles from './styles'
 
-export default class DishList extends Component {
+export default class CountryDishes extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: `Dishes from ${navigation.state.params.country.name}`
   })

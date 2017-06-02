@@ -49,7 +49,7 @@ export default class Home extends Component {
     const { navigate } = this.props.navigation
     const { countries } = this.state
 
-    navigate('DishList', {
+    navigate('CountryDishes', {
       country: countries.find((country) => country.code === code)
     })
   }
