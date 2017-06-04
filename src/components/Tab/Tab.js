@@ -11,14 +11,14 @@ import styles from './styles'
 
 const Tab = ({ onPress, selected, text, style }) => (
   <TouchableHighlight
-    style={[styles.tab, style]}
-    onPress={onPress}>
-    <View
-      style={[
-        styles.button,
-        selected && styles.buttonSelected
-      ]}
-    >
+    style={[
+      styles.tab,
+      selected && styles.selected,
+      style
+    ]}
+    onPress={onPress}
+  >
+    <View style={[styles.button]}>
       <Text 
         style={[
           styles.text,

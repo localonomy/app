@@ -9,12 +9,20 @@ import styles from './styles'
 
 const CountryPicker = ({ countries, onValueChange }) => (
   <Picker
-    style={{width: 500}}
-    onValueChange={onValueChange}>
-    <Picker.Item label='Please select a country' value='' />
+    style={styles.picker}
+    onValueChange={onValueChange}
+  > 
+    <Picker.Item 
+      style={styles.item} 
+      key='' 
+      label='Please select a country' 
+      value='' 
+    />
+    
     {countries.map((country) => {
       return (
         <Picker.Item
+          style={styles.item}
           key={country.id}
           label={country.name}
           value={country.code}

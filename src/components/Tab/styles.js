@@ -5,15 +5,20 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   tab: {
     flex: 1,
-    height: 20,
-  },
-  button: {
+    height: 36,
     backgroundColor: 'peachpuff',
   },
-  buttonSelected: {
+  selected: {
     backgroundColor: 'chocolate',
   },
+
+  button: {
+    padding: 6,
+  },
+
   text: {
+    textAlign: 'center',
+    fontSize: 18,
     color: 'black',
   },
   textSelected: {

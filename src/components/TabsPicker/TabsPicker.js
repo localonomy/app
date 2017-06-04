@@ -26,11 +26,13 @@ export default class TabsPicker extends Component {
       <View style={[styles.tabsPicker, this.props.style]}>
         <View style={styles.tabs}>
           <Tab
+            style={styles.tabCountry}
             onPress={() => this.setState({ tab: 'country' })}
             selected ={this.state.tab === 'country'}
             text='By Country'
           />
           <Tab
+            style={styles.tabDish}
             onPress={() => this.setState({ tab: 'dish' })}
             selected ={this.state.tab === 'dish'}
             text='By Dish Name'
