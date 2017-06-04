@@ -14,6 +14,7 @@ export default StyleSheet.create({
   },
   tabCountry: {
     borderTopLeftRadius: 12,
+    borderRightWidth: 0,
   },
   tabDish: {
     borderTopRightRadius: 12,

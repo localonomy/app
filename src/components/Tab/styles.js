@@ -7,6 +7,9 @@ export default StyleSheet.create({
     flex: 1,
     height: 36,
     backgroundColor: 'peachpuff',
+    borderColor: 'grey',
+    borderWidth: 1,
+    borderBottomWidth: 0,
   },
   selected: {
     backgroundColor: 'chocolate',
