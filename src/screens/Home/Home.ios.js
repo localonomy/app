@@ -46,6 +46,8 @@ export default class Home extends Component {
   }
 
   onCountrySelect(code) {
+    if (!code) return
+
     const { navigate } = this.props.navigation
     const { countries } = this.state
 
