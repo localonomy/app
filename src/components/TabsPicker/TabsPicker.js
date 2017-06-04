@@ -43,7 +43,7 @@ export default class TabsPicker extends Component {
           {(this.state.tab === 'country') ?
             <CountryPicker
               countries={this.props.countries}
-              onValueChange={this.props.onCountrySelect}
+              onSelect={this.props.onCountrySelect}
             /> : 
             <DishPicker />
           }

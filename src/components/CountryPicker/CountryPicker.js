@@ -2,34 +2,33 @@
 
 import React from 'react'
 import {
-  Picker,
+  View,
 } from 'react-native'
+import {
+  Select,
+  Option,
+} from 'react-native-chooser'
 
 import styles from './styles'
 
-const CountryPicker = ({ countries, onValueChange }) => (
-  <Picker
-    style={styles.picker}
-    onValueChange={onValueChange}
-  > 
-    <Picker.Item 
-      style={styles.item} 
-      key='' 
-      label='Please select a country' 
-      value='' 
-    />
-    
-    {countries.map((country) => {
-      return (
-        <Picker.Item
-          style={styles.item}
-          key={country.id}
-          label={country.name}
-          value={country.code}
-        />
-      )
-    })}
-  </Picker>
+const CountryPicker = ({ countries, onSelect, style }) => (
+  <View style={style}>
+    <Select
+      onSelect={onSelect}
+      defaultText='Please select a country'
+      style={styles.picker}
+      textStyle = {styles.text}
+      backdropStyle = {styles.backdrop}
+      optionListStyle = {styles.list}
+      transparent={true}
+    >
+      {countries.map((country) => (
+        <Option key={country.id} value={country.code}>
+          {country.name}
+        </Option>
+      ))}
+    </Select>
+  </View>
 )
 
 export default CountryPicker
