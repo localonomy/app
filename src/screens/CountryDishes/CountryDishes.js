@@ -1,12 +1,7 @@
 // @flow
 
 import React, { Component } from 'react'
-import {
-  FlatList,
-  Image,
-  Text,
-  View,
-} from 'react-native'
+import { View } from 'react-native'
 
 import config from './../../config'
 import store from './../../store'
