@@ -23,10 +23,12 @@ export default class Home extends Component {
     super(props)
 
     this.onCountrySelect = this.onCountrySelect.bind(this)
+    this.onDishSelect = this.onDishSelect.bind(this)
     this.onFilterPress = this.onFilterPress.bind(this)
 
     this.state = {
       countries: [],
+      dishes: [],
       filters: [],
       filtersDisabled: [],
     }
@@ -34,12 +36,14 @@ export default class Home extends Component {
 
   async componentDidMount() {
     let countries = await store.get('countries')
+    let dishes = await store.get('dishes-names')
     let filters = await store.get('filters')
     let filtersDisabled = await store.get('filters-disabled')
 
     this.setState((prev) => ({
       ...prev,
       countries,
+      dishes,
       filters,
       filtersDisabled,
     }))
@@ -53,6 +57,18 @@ export default class Home extends Component {
 
     navigate('CountryDishes', {
       country: countries.find((country) => country.code === code)
+    })
+  }
+
+  onDishSelect(id) {
+    if (!id) return
+
+    const { navigate } = this.props.navigation
+    const { countries, dishes } = this.state
+
+    navigate('DishDetails', {
+      dish: dishes.find((dish) => dish.id === id),
+      country: countries.find((country) => country.code === id.slice(0, 2))
     })
   }
 
@@ -86,7 +102,9 @@ export default class Home extends Component {
 
         <TabsPicker style={styles.tabs}
           countries={this.state.countries} 
-          onCountrySelect={this.onCountrySelect} />
+          onCountrySelect={this.onCountrySelect}
+          dishes={this.state.dishes} 
+          onDishSelect={this.onDishSelect} />
 
         <Filters style={styles.filters}
           filters={this.state.filters}

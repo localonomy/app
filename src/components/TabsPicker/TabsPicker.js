@@ -45,7 +45,10 @@ export default class TabsPicker extends Component {
               countries={this.props.countries}
               onSelect={this.props.onCountrySelect}
             /> : 
-            <DishPicker />
+            <DishPicker
+              dishes={this.props.dishes}
+              onSelect={this.props.onDishSelect}
+            />
           }
         </View>
       </View>
