@@ -3,7 +3,7 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-  welcome: {
+  title: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,

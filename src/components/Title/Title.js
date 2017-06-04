@@ -8,8 +8,8 @@ import styles from './styles'
 export default class Title extends Component {
   render() {
     return (
-      <Text style={styles.welcome}>
-        { this.props.children } from Android!
+      <Text style={[styles.title, this.props.style]}>
+        { this.props.children }
       </Text>
     )
   }
