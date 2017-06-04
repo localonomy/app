@@ -80,13 +80,15 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Title>Discover Local Delicacies!</Title>
+        <Title style={styles.title}>
+          Discover Local Delicacies!
+        </Title>
 
-        <TabsPicker
+        <TabsPicker style={styles.tabs}
           countries={this.state.countries} 
           onCountrySelect={this.onCountrySelect} />
 
-        <Filters
+        <Filters style={styles.filters}
           filters={this.state.filters}
           filtersDisabled={this.state.filtersDisabled}
           onFilterPress={this.onFilterPress} />

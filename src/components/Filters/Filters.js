@@ -9,8 +9,8 @@ import Filter from './../Filter'
 
 import styles from './styles'
 
-const Filters = ({ filters, filtersDisabled, onFilterPress }) => (
-  <View>
+const Filters = ({ filters, filtersDisabled, onFilterPress, style }) => (
+  <View style={[style]}>
     {filters.map((filter) => (
       <Filter
         key={filter}
