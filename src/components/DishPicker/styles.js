@@ -9,13 +9,13 @@ let { height, width } = Dimensions.get('window')
 
 export default StyleSheet.create({
   picker: {
-    borderColor: 'lightgrey',
+    borderColor: 'grey',
     width: width - (12 * 2),
   },
   list: {
     backgroundColor : "#F5FCFF",
-    borderColor: 'lightgrey',
-    height: 230, // TODO - Magic numbers ...
+    borderColor: 'grey',
+    height: 231, // TODO - Magic numbers ...
     width: width - (12 * 2),
   },
   backdrop: {
