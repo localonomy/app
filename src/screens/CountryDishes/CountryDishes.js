@@ -63,13 +63,13 @@ export default class CountryDishes extends Component {
     return (
       <View style={styles.container}>
         <CountryHeader
-           style={styles.header}
+          style={styles.header}
           name={country.name}
           flag={`${config.url}/img/flag/${country.code}.png`}
         />
 
         <DishList
-           style={styles.list}
+          style={styles.list}
           dishes={this.state.dishes} 
           onDishPress={this.onDishPress(country)}
         />
