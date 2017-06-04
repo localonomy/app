@@ -15,7 +15,7 @@ export default StyleSheet.create({
   list: {
     backgroundColor : "#F5FCFF",
     borderColor: 'grey',
-    height: 231, // TODO - Magic numbers ...
+    height: (231/667) * height, // TODO - Magic numbers ...
     width: width - (12 * 2),
   },
   backdrop: {
