@@ -61,13 +61,15 @@ export default class CountryDishes extends Component {
     let { country } = this.props.navigation.state.params
 
     return (
-      <View>
+      <View style={styles.container}>
         <CountryHeader
+           style={styles.header}
           name={country.name}
           flag={`${config.url}/img/flag/${country.code}.png`}
         />
 
         <DishList
+           style={styles.list}
           dishes={this.state.dishes} 
           onDishPress={this.onDishPress(country)}
         />

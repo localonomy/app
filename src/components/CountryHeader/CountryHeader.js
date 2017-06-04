@@ -9,13 +9,13 @@ import {
 
 import styles from './styles'
 
-const CountryHeader = ({ name, flag }) => (
-  <View>
-    <Text>Local Dishes from {name}</Text>
-    <Image
-      style={{height:50, width: 50}}
-      source={{ uri: flag, cache: 'force-cache' }}
-    />
+const CountryHeader = ({ name, flag, style }) => (
+  <View style={[styles.header, style]}>
+    <View style={styles.text}>
+      <Text style={styles.subtitle}>Local Dishes from</Text>
+      <Text style={styles.title}>{name}</Text>
+    </View>
+    <Image style={styles.flag} source={{ uri: flag, cache: 'force-cache' }} />
   </View>
 )
 
