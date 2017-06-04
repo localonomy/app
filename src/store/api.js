@@ -3,7 +3,6 @@
 import config from './../config'
 
 import badges from './data/badges.json'
-import filters from './data/filters.json'
 
 const get = async (key) => {
   let id, response
@@ -11,7 +10,8 @@ const get = async (key) => {
   [key, id] = key.split('--')
   switch (key) {
     case 'filters':
-      return new Promise((resolve, reject) => { resolve(filters) })
+      response = await fetch(`${config.url}/api/filters`)
+      return response.json()
 
     case 'badges':
       return new Promise((resolve, reject) => { resolve(badges) })
