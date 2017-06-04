@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
   tabs: {
     top: 12,
-    marginTop: 36,
+    marginTop: 12,
     marginLeft: 12,
     marginRight: 12,
   },
