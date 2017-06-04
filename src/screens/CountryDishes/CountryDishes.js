@@ -11,6 +11,9 @@ import {
 import config from './../../config'
 import store from './../../store'
 
+import CountryHeader from './../../components/CountryHeader'
+import DishList from './../../components/DishList'
+
 import styles from './styles'
 
 export default class CountryDishes extends Component {
@@ -20,6 +23,8 @@ export default class CountryDishes extends Component {
 
   constructor(props) {
     super(props)
+
+    this.onDishPress = this.onDishPress.bind(this)
 
     this.state = {
       dishes: [],
@@ -44,41 +49,28 @@ export default class CountryDishes extends Component {
     }))
   }
 
+  onDishPress(country) {
+    return (dish) => () => {
+      const { navigate } = this.props.navigation
+
+      navigate('DishDetails', { country, dish })
+    }
+  }
+
   render() {
     let { country } = this.props.navigation.state.params
 
     return (
       <View>
-        <View>
-          <Text>Local Dishes from {country.name}</Text>
-          <Image
-            style={{height:50, width: 50}}
-            source={{
-              uri: `${config.url}/img/flag/${country.code}.png`,
-              cache: 'force-cache',
-            }}
-          />
-        </View>
-        <View>
-          <FlatList
-            data={this.state.dishes}
-            renderItem={({item}) => (
-              <Text
-                key={item.id}
-                onPress={() => {
-                  const { navigate } = this.props.navigation
+        <CountryHeader
+          name={country.name}
+          flag={`${config.url}/img/flag/${country.code}.png`}
+        />
 
-                  navigate('DishDetails', {
-                    country: country,
-                    dish: item,
-                  })
-                }}
-                >
-                {item.name}
-              </Text>
-            )}
-          />
-        </View>
+        <DishList
+          dishes={this.state.dishes} 
+          onDishPress={this.onDishPress(country)}
+        />
       </View>
     )
   }
