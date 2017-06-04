@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native'
 
+import config from './../../config'
 import store from './../../store'
 
 import styles from './styles'
@@ -57,7 +58,7 @@ export default class DishDetails extends Component {
         <Image
           style={{height:50, width: 50}}
           source={{
-            uri: `http://localhost:3000/img/dish/${name.toLowerCase()}.jpg`,
+            uri: `${config.url}/img/dish/${name.toLowerCase()}.jpg`,
             cache: 'force-cache',
           }}
         />

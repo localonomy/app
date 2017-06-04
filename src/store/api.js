@@ -1,6 +1,6 @@
 // @flow
 
-import config from './config'
+import config from './../config'
 
 import badges from './data/badges.json'
 import filters from './data/filters.json'

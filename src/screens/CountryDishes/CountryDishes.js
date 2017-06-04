@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native'
 
+import config from './../../config'
 import store from './../../store'
 
 import styles from './styles'
@@ -53,7 +54,7 @@ export default class CountryDishes extends Component {
           <Image
             style={{height:50, width: 50}}
             source={{
-              uri: `http://localhost:3000/img/flag/${country.code}.png`,
+              uri: `${config.url}/img/flag/${country.code}.png`,
               cache: 'force-cache',
             }}
           />
