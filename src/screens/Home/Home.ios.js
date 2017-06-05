@@ -104,12 +104,14 @@ export default class Home extends Component {
           countries={this.state.countries} 
           onCountrySelect={this.onCountrySelect}
           dishes={this.state.dishes} 
-          onDishSelect={this.onDishSelect} />
+          onDishSelect={this.onDishSelect}
+        />
 
         <Filters style={styles.filters}
           filters={this.state.filters}
           filtersDisabled={this.state.filtersDisabled}
-          onFilterPress={this.onFilterPress} />
+          onFilterPress={this.onFilterPress}
+        />
       </View>
     )
   }
