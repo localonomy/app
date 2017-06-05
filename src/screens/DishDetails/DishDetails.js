@@ -8,7 +8,9 @@ import {
   View,
 } from 'react-native'
 
-import Ingredients from './../../components/Ingredients'
+import DishDetailsHeader from './../../components/DishDetailsHeader'
+import DishDetailsContent from './../../components/DishDetailsContent'
+import DishDetailsFooter from './../../components/DishDetailsFooter'
 
 import config from './../../config'
 import store from './../../store'
@@ -41,46 +43,19 @@ export default class DishDetails extends Component {
   }
 
   render() {
-    const {
-      id,
-      name,
-      ingredients,
-      description,
-      picture,
-      rate,
-      country,
-    } = this.state
-
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <View style={styles.left}>
-            <Text style={styles.name}>{name}</Text>
-            <Ingredients style={{
-              ingredients: styles.ingredients,
-              ingredient: styles.ingredient,
-            }} dish={this.state} />
-          </View>
-          <Image style={styles.flag} source={{
-            uri: `${config.url}/img/flag/${country.code}.png`,
-            cache: 'force-cache',
-          }}/>
-        </View>
+        <DishDetailsHeader
+          dish={this.state}
+          flag={`${config.url}/img/flag/${this.state.country.code}.png`}
+        />
 
-        <View style={styles.content}>
-          <Text style={styles.description}>{description}</Text>
-          <Image
-            style={styles.picture}
-            source={{
-              uri: `${config.url}/img/dish/${name.toLowerCase()}.jpg`,
-              cache: 'force-cache',
-            }}
-          />
-        </View>
+        <DishDetailsContent
+          description={this.state.description}
+          picture={`${config.url}/img/dish/${this.state.name.toLowerCase()}.jpg`}
+        />
 
-        <View style={styles.footer}>
-          {(rate) ? <Text>{rate}</Text> : <Button title="Check-In" />}
-        </View>
+        <DishDetailsFooter rate={this.state.rate} />
       </View>
     )
   }
