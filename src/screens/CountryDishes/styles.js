@@ -11,13 +11,14 @@ export default StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   header: {
-    marginTop: 12,
-    marginLeft: 12,
-    marginRight: 12,
+    paddingTop: 12,
+    paddingLeft: 12,
+    paddingRight: 12,
+    backgroundColor: 'peachpuff',
   },
   list: {
-    marginTop: 36,
     marginLeft: 12,
     marginRight: 12,
+    marginBottom: 72, // Magic numbers again!
   },
 })
