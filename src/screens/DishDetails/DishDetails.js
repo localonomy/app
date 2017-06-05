@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native'
 
+import Ingredients from './../../components/Ingredients'
+
 import config from './../../config'
 import store from './../../store'
 
@@ -48,22 +50,37 @@ export default class DishDetails extends Component {
       rate,
       country,
     } = this.state
-    
+
     return (
-      <View>
-        <Text>{name}</Text>
-        <Text>{country.name} - {country.code}</Text>
-
-        <Text>{description}</Text>
-        <Image
-          style={{height:50, width: 50}}
-          source={{
-            uri: `${config.url}/img/dish/${name.toLowerCase()}.jpg`,
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.left}>
+            <Text style={styles.name}>{name}</Text>
+            <Ingredients style={{
+              ingredients: styles.ingredients,
+              ingredient: styles.ingredient,
+            }} dish={this.state} />
+          </View>
+          <Image style={styles.flag} source={{
+            uri: `${config.url}/img/flag/${country.code}.png`,
             cache: 'force-cache',
-          }}
-        />
+          }}/>
+        </View>
 
-        {(rate) ? <Text>{rate}</Text> : <Button title="Check-In" />}
+        <View style={styles.content}>
+          <Text style={styles.description}>{description}</Text>
+          <Image
+            style={styles.picture}
+            source={{
+              uri: `${config.url}/img/dish/${name.toLowerCase()}.jpg`,
+              cache: 'force-cache',
+            }}
+          />
+        </View>
+
+        <View style={styles.footer}>
+          {(rate) ? <Text>{rate}</Text> : <Button title="Check-In" />}
+        </View>
       </View>
     )
   }
