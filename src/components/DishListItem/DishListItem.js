@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native'
 
+import Ingredients from './../Ingredients'
+
 import config from './../../config'
 
 import styles from './styles'
@@ -20,18 +22,7 @@ const DishListItem = ({ dish, onPress, style }) => (
   >
     <View>
       <Text style={styles.text}>{dish.name}</Text>
-      <View style={styles.ingredients}>
-        {dish.ingredients.map((ingredient, index) => (
-          <Image
-            key={`${dish.name}-${index}`}
-            style={styles.ingredient}
-            source={{
-              uri: `${config.url}/img/ingredient/${ingredient}.png`,
-              cache: 'force-cache'
-            }}
-          />
-        ))}
-      </View>
+      <Ingredients dish={dish} />
     </View>
   </TouchableHighlight>
 )
