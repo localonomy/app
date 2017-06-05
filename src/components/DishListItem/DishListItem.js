@@ -13,7 +13,11 @@ import config from './../../config'
 import styles from './styles'
 
 const DishListItem = ({ dish, onPress, style }) => (
-  <TouchableHighlight style={[styles.item, style]} onPress={onPress}>
+  <TouchableHighlight 
+    style={[styles.item, style]}
+    underlayColor={'ghostwhite'}
+    onPress={onPress}
+  >
     <View>
       <Text style={styles.text}>{dish.name}</Text>
       <View style={styles.ingredients}>
