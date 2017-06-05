@@ -52,7 +52,7 @@ export default class DishDetails extends Component {
 
         <DishDetailsContent
           description={this.state.description}
-          picture={`${config.url}/img/dish/${this.state.name.toLowerCase()}.jpg`}
+          picture={`${config.url}/img/dish/${this.state.picture}`}
         />
 
         <DishDetailsFooter rate={this.state.rate} />
