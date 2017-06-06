@@ -25,6 +25,8 @@ export default class DishDetails extends Component {
   constructor(props) {
     super(props)
 
+    this.onRatePress = this.onRatePress.bind(this)
+
     let { dish } = this.props.navigation.state.params
     let { country } = this.props.navigation.state.params
 
@@ -42,6 +44,19 @@ export default class DishDetails extends Component {
     this.setState((prev) => ({ ...prev, ...dish, }))
   }
 
+  onRatePress(rate) {
+    return async () => {
+      let dish = this.state
+      dish.rate = rate
+
+      let dishesTasted = await store.get(`dishes-tasted`)
+      dishesTasted.push(dish)
+      await store.set(`dishes-tasted`, dishesTasted)
+
+      this.setState((prev) => ({ ...prev, ...dish }))
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -55,7 +70,10 @@ export default class DishDetails extends Component {
           picture={`${config.url}/img/dish/${this.state.picture}`}
         />
 
-        <DishDetailsFooter rate={this.state.rate} />
+        <DishDetailsFooter
+          rate={this.state.rate}
+          onRatePress={this.onRatePress}
+        />
       </View>
     )
   }
