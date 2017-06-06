@@ -15,4 +15,11 @@ export default StackNavigator({
   Home: { screen: Home },
   CountryDishes: { screen: CountryDishes },
   DishDetails: { screen: DishDetails },
+},{
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: 'chocolate',
+    },
+    headerTintColor: 'white',
+  }
 })
