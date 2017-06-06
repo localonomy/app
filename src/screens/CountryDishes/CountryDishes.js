@@ -20,6 +20,7 @@ export default class CountryDishes extends Component {
     super(props)
 
     this.onDishPress = this.onDishPress.bind(this)
+    this.updateDishRating = this.updateDishRating.bind(this)
 
     this.state = {
       dishes: [],
@@ -38,6 +39,13 @@ export default class CountryDishes extends Component {
     dishes = dishes.filter((dish) =>
       dish.contains.every((f) => !filters.includes(f)))
 
+    // Add rating info for tasted dishes
+    let dishesTasted = await store.get(`dishes-tasted`)
+    dishes.forEach((dish) => {
+      let tasted = dishesTasted.find((d) => d.id === dish.id) 
+      dish.rate = tasted && tasted.rate
+    })
+
     this.setState((prev) => ({
       ...prev,
       dishes,
@@ -48,7 +56,24 @@ export default class CountryDishes extends Component {
     return (dish) => () => {
       const { navigate } = this.props.navigation
 
-      navigate('DishDetails', { country, dish })
+      navigate('DishDetails', {
+        country,
+        dish,
+        updateDishRating: this.updateDishRating(dish)
+      })
+    }
+  }
+
+  // Just a litte hack to pass the state back to this screen.
+  // Yes, we could use Redux for this ... but let's fight that urge for
+  // just a little bit longer shall we? :D
+  updateDishRating(dish) {
+    return (rate) => {
+      let { dishes } = this.state
+      let index = dishes.findIndex((d) => d.id === dish.id)
+      dishes[index].rate = rate
+
+      this.setState((prev) => ({ ...prev, dishes, }))
     }
   }
 

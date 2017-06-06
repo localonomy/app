@@ -61,6 +61,8 @@ export default class DishDetails extends Component {
       await store.set(`dishes-tasted`, dishesTasted)
 
       this.setState((prev) => ({ ...prev, ...dish }))
+
+      this.props.navigation.state.params.updateDishRating(rate)
     }
   }
 
