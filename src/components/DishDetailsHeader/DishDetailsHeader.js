@@ -14,7 +14,12 @@ import styles from './styles'
 const DishDetailsHeader = ({ dish, flag }) => (
   <View style={styles.header}>
     <View style={styles.left}>
-      <Text style={styles.name}>{dish.name}</Text>
+      <Text style={styles.name}>
+        {dish.name}
+        <Text style={styles.localName}>
+          {(dish.localName && dish.localName !== dish.name) ? ` - ${dish.localName}` : ''}
+        </Text>
+      </Text>
       <Ingredients dish={dish} style={{
         ingredients: styles.ingredients,
         ingredient: styles.ingredient,

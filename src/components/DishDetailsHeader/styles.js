@@ -12,11 +12,15 @@ export default StyleSheet.create({
   },
   left: {
     flex: 1,
-    flexDirection: 'column'    
+    flexDirection: 'column',
   },
   name: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
+  },
+  localName: {
+    fontSize: 12,
+    fontWeight: 'normal',
   },
   ingredients: {
     marginLeft: -6, // ahem ...
