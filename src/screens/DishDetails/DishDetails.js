@@ -50,7 +50,14 @@ export default class DishDetails extends Component {
       dish.rate = rate
 
       let dishesTasted = await store.get(`dishes-tasted`)
-      dishesTasted.push(dish)
+      let tastedIndex = dishesTasted.findIndex((d) => d.id === dish.id)
+
+      if (tastedIndex > -1) {
+        dishesTasted[tastedIndex].rate = rate
+      } else {
+        dishesTasted.push(dish)
+      }
+
       await store.set(`dishes-tasted`, dishesTasted)
 
       this.setState((prev) => ({ ...prev, ...dish }))
