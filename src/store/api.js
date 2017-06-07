@@ -12,9 +12,6 @@ const get = async (key) => {
     case 'filters':
       response = await fetch(`${config.url}/api/filters`)
       return response.json()
-
-    case 'badges':
-      return new Promise((resolve, reject) => { resolve(badges) })
   
     case 'countries':
       response = await fetch(`${config.url}/api/countries`)

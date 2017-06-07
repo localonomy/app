@@ -6,7 +6,7 @@ import api from './api'
 
 const store = {
   async init() {
-    let keys = ['filters-disabled', 'badges-earned', 'dishes-tasted']
+    let keys = ['filters-disabled', 'dishes-tasted']
 
     keys.forEach(async (key) => {
       let value = await ReactNativeStore.get(key)
