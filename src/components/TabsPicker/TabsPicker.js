@@ -6,8 +6,7 @@ import {
   View,
 } from 'react-native'
 
-import CountryPicker from './../../components/CountryPicker'
-import DishPicker from './../../components/DishPicker'
+import DropdownPicker from './../../components/DropdownPicker'
 import Tab from './../../components/Tab'
 
 import styles from './styles'
@@ -41,12 +40,16 @@ export default class TabsPicker extends Component {
 
         <View  style={styles.pickers}>
           {(this.state.tab === 'country') ?
-            <CountryPicker
-              countries={this.props.countries}
+            <DropdownPicker
+              key='country'
+              data={this.props.countries}
+              defaultText='Please select a country ...'
               onSelect={this.props.onCountrySelect}
             /> : 
-            <DishPicker
-              dishes={this.props.dishes}
+            <DropdownPicker
+              key='dish'
+              data={this.props.dishes}
+              defaultText='Please select a dish ...'
               onSelect={this.props.onDishSelect}
             />
           }

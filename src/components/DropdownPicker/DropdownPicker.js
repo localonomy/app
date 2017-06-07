@@ -11,24 +11,24 @@ import {
 
 import styles from './styles'
 
-const CountryPicker = ({ countries, onSelect, style }) => (
+const DropdownPicker = ({ data, defaultText, tab, onSelect, style }) => (
   <View style={style}>
     <Select
       onSelect={onSelect}
-      defaultText='Please select a country'
+      defaultText={defaultText}
       style={styles.picker}
       textStyle = {styles.text}
       backdropStyle = {styles.backdrop}
       optionListStyle = {styles.list}
       transparent={true}
     >
-      {countries.map((country) => (
-        <Option key={country.id} value={country.code}>
-          {country.name}
+      {data.map((item) => (
+        <Option key={item.id} value={item.id}>
+          {item.name}
         </Option>
       ))}
     </Select>
   </View>
 )
 
-export default CountryPicker
+export default DropdownPicker
