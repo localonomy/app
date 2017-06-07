@@ -2,8 +2,6 @@
 
 import config from './../config'
 
-import badges from './data/badges.json'
-
 const get = async (key) => {
   let id, response
 
