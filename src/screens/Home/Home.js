@@ -22,6 +22,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
 
+    this.onTabPress = this.onTabPress.bind(this)
     this.onCountrySelect = this.onCountrySelect.bind(this)
     this.onDishSelect = this.onDishSelect.bind(this)
     this.onFilterPress = this.onFilterPress.bind(this)
@@ -31,6 +32,7 @@ export default class Home extends Component {
       dishes: [],
       filters: [],
       filtersDisabled: [],
+      tab: 'country',
     }
   }
 
@@ -47,6 +49,10 @@ export default class Home extends Component {
       filters,
       filtersDisabled,
     }))
+  }
+
+  onTabPress(tab) {
+    return () => this.setState((prev) => ({ ...prev, tab }))
   }
 
   onCountrySelect(code) {
@@ -101,6 +107,8 @@ export default class Home extends Component {
         </Title>
 
         <TabsPicker style={styles.tabs}
+          tab={this.state.tab}
+          onTabPress={this.onTabPress}
           countries={this.state.countries} 
           onCountrySelect={this.onCountrySelect}
           dishes={this.state.dishes} 

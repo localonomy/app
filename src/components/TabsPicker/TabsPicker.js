@@ -11,50 +11,43 @@ import Tab from './../../components/Tab'
 
 import styles from './styles'
 
-export default class TabsPicker extends Component {
-  constructor(props) {
-    super(props)
+const TabsPicker = ({
+  tab, onTabPress,
+  countries, onCountrySelect,
+  dishes, onDishSelect,
+  style
+}) => (
+  <View style={[styles.tabsPicker, style]}>
+    <View style={styles.tabs}>
+      <Tab style={styles.tabCountry}
+        onPress={onTabPress('country')}
+        selected ={tab === 'country'}
+        text='By Country'
+      />
+      <Tab style={styles.tabDish}
+        onPress={onTabPress('dish')}
+        selected ={tab === 'dish'}
+        text='By Dish Name'
+      />
+    </View>
 
-    this.state = {
-      tab: 'country'
-    }
-  }
+    <View style={styles.pickers}>
+      {(tab === 'country') ?
+        <DropdownPicker
+          key='country'
+          data={countries}
+          defaultText='Please select a country ...'
+          onSelect={onCountrySelect}
+        /> : 
+        <DropdownPicker
+          key='dish'
+          data={dishes}
+          defaultText='Please select a dish ...'
+          onSelect={onDishSelect}
+        />
+      }
+    </View>
+  </View>
+)
 
-  render() {
-    return (
-      <View style={[styles.tabsPicker, this.props.style]}>
-        <View style={styles.tabs}>
-          <Tab
-            style={styles.tabCountry}
-            onPress={() => this.setState({ tab: 'country' })}
-            selected ={this.state.tab === 'country'}
-            text='By Country'
-          />
-          <Tab
-            style={styles.tabDish}
-            onPress={() => this.setState({ tab: 'dish' })}
-            selected ={this.state.tab === 'dish'}
-            text='By Dish Name'
-          />
-        </View>
-
-        <View  style={styles.pickers}>
-          {(this.state.tab === 'country') ?
-            <DropdownPicker
-              key='country'
-              data={this.props.countries}
-              defaultText='Please select a country ...'
-              onSelect={this.props.onCountrySelect}
-            /> : 
-            <DropdownPicker
-              key='dish'
-              data={this.props.dishes}
-              defaultText='Please select a dish ...'
-              onSelect={this.props.onDishSelect}
-            />
-          }
-        </View>
-      </View>
-    )
-  }
-}
+export default TabsPicker
