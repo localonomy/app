@@ -18,6 +18,7 @@ const DishDetailsFooter = ({ rate, onRatePress }) => (
           styles.tabDown,
           rate === -1 && styles.selectedDown
         ]}
+        underlayColor={'ghostwhite'}
         onPress={onRatePress(-1)}
       >
         <View style={styles.button}>
@@ -35,6 +36,7 @@ const DishDetailsFooter = ({ rate, onRatePress }) => (
           styles.tabUp,
           rate === 1 && styles.selectedUp
         ]}
+        underlayColor={'ghostwhite'}
         onPress={onRatePress(1)}
       >
         <View style={[styles.button]}>

@@ -16,6 +16,7 @@ const Tab = ({ onPress, selected, text, style }) => (
       selected && styles.selected,
       style
     ]}
+    underlayColor={'chocolate'}
     onPress={onPress}
   >
     <View style={[styles.button]}>
