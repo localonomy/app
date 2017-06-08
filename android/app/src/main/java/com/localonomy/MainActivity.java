@@ -1,4 +1,4 @@
-package com.app;
+package com.localonomy;
 
 import com.facebook.react.ReactActivity;
 
