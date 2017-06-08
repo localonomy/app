@@ -16,6 +16,7 @@ export default StyleSheet.create({
     backgroundColor : '#F5FCFF',
     borderColor: 'grey',
     height: // Magic numbers ...
+      (height === 568) ? 180 : // iPhone 5 - iPhone 5s - iPhone SE
       (height === 667) ? 279 : // iPhone 6 - iPhone 6s - iPhone 7
       (height === 736) ? 348 : // iPhone 6 Plus - iPhone 6s Plus - iPhone 7 Plus
       300, // This could be just about anything ¯\_(ツ)_/¯
