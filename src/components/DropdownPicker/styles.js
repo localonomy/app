@@ -13,7 +13,7 @@ export default StyleSheet.create({
     width: width - (12 * 2),
   },
   list: {
-    backgroundColor : "#F5FCFF",
+    backgroundColor : '#F5FCFF',
     borderColor: 'grey',
     height: // Magic numbers ...
       (height === 667) ? 279 : // iPhone 6 - iPhone 6s - iPhone 7
@@ -22,7 +22,7 @@ export default StyleSheet.create({
     width: width - (12 * 2),
   },
   backdrop: {
-
+    
   },
   text: {
     
