@@ -1,4 +1,4 @@
-package com.localonomy;
+package com.localonomy.app;
 
 import android.app.Application;
 
