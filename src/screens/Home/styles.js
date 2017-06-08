@@ -22,7 +22,7 @@ export default StyleSheet.create({
     marginRight: 12,
   },
   filters: {
-    marginTop: -288, // Magic numbers everywhere ...
+    marginTop: 12,
     marginLeft: 24,
     marginRight: 24,
     marginBottom: 36,
