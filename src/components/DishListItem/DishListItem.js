@@ -10,8 +10,6 @@ import {
 
 import Ingredients from './../Ingredients'
 
-import config from './../../config'
-
 import styles from './styles'
 
 const DishListItem = ({ dish, onPress, style }) => (
@@ -27,8 +25,9 @@ const DishListItem = ({ dish, onPress, style }) => (
       </View>
       <View style={styles.rate}>
         {(dish.rate) ? <Image style={styles.image} source={
-            (dish.rate === 1) ? require(`./img/up.png`) :
-            (dish.rate === -1) ? require(`./img/down.png`) : ``
+            (dish.rate === 1) ? require(`./../../images/up.png`) :
+            (dish.rate === -1) ? require(`./../../images/down.png`) :
+            ``
           } /> : <Text></Text> }
       </View>
     </View>

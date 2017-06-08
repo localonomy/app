@@ -21,8 +21,12 @@ const DishDetailsFooter = ({ rate, onRatePress }) => (
         onPress={onRatePress(-1)}
       >
         <View style={styles.button}>
-          <Image style={styles.image} source={(rate === -1) ? require(`./img/down-selected.png`) : require(`./img/down.png`) 
-          } />
+          <Image style={styles.image} source={
+            (rate === -1) ?
+              require(`./../../images/down-selected.png`) :
+              require(`./../../images/down.png`)
+            }
+          />
         </View>
       </TouchableHighlight>
       <TouchableHighlight
@@ -34,8 +38,12 @@ const DishDetailsFooter = ({ rate, onRatePress }) => (
         onPress={onRatePress(1)}
       >
         <View style={[styles.button]}>
-          <Image style={styles.image} source={ (rate === 1) ? require(`./img/up-selected.png`) : require(`./img/up.png`) 
-          } />
+          <Image style={styles.image} source={
+            (rate === 1) ?
+              require(`./../../images/up-selected.png`) :
+              require(`./../../images/up.png`) 
+            }
+          />
         </View>
       </TouchableHighlight>
     </View>
