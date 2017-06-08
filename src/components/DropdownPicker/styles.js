@@ -2,6 +2,7 @@
 
 import { 
   Dimensions,
+  Platform,
   StyleSheet,
 } from 'react-native'
 
@@ -15,7 +16,10 @@ export default StyleSheet.create({
   list: {
     backgroundColor : '#F5FCFF',
     borderColor: 'grey',
-    height: height - 388, // Magic numbers ... apparentyl this works! ¯\_(ツ)_/¯
+    height: // Magic numbers ... apparentyl this works! ¯\_(ツ)_/¯
+      (Platform.OS === 'ios') ? height - 388 : 
+      (Platform.OS === 'android') ? height - 403 :
+      0,
     width: width - (12 * 2),
   },
   backdrop: {
