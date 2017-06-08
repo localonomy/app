@@ -1,5 +1,7 @@
 // @flow
 
 export default {
-  url: `http://localhost:3000`,
+  url: (__DEV__) ?
+    `http://localhost:3000` :
+    `https://localonomy-api.herokuapp.com`,
 }
