@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="chocolate">#D2691E</color>
+  <color name="chocolate_dark">#864313</color>
 </resources>
