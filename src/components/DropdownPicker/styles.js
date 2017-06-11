@@ -18,7 +18,7 @@ export default StyleSheet.create({
     borderColor: 'grey',
     height: // Magic numbers ... apparentyl this works! ¯\_(ツ)_/¯
       (Platform.OS === 'ios') ? height - 388 : 
-      (Platform.OS === 'android') ? height - 403 :
+      (Platform.OS === 'android') ? height - 400 :
       0,
     width: width - (12 * 2),
   },

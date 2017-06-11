@@ -1,6 +1,9 @@
 // @flow
 
-import { StyleSheet } from 'react-native'
+import {
+  Platform,
+  StyleSheet,
+} from 'react-native'
 
 export default StyleSheet.create({
   tabsPicker: {
@@ -17,6 +20,9 @@ export default StyleSheet.create({
     borderTopRightRadius: 12,
   },
   pickers: {
-    
+    marginTop: // Little hack ... there's an extra pixel on Android!
+      (Platform.OS === 'ios') ? 0 : 
+      (Platform.OS === 'android') ? -1 :
+      0,
   },
 })
